@@ -1,15 +1,22 @@
 {
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
-      "source": "/(.*\\.wasm)$",
+      "source": "/(.*)\\.wasm",
       "headers": [
         { "key": "Content-Type", "value": "application/wasm" }
       ]
     },
     {
-      "source": "/(.*\\.pck)$",
+      "source": "/(.*)\\.pck",
       "headers": [
         { "key": "Content-Type", "value": "application/octet-stream" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript" }
       ]
     }
   ]
